@@ -1,0 +1,53 @@
+html, body {
+    height:100%;
+    width: 100%;
+}
+.my-Menu {
+    display: none;
+}
+@media only screen and (min-width: 1100px) {
+    .my-Menu{
+        display: inherit;
+    }
+    .tv {
+        top: -5px;
+        right: -5px;
+        height: 100%;
+        width: 100%;
+        transform: scale(.9);
+        z-index: 2000;
+        border-radius: 10px;
+        border-width: 4px!important;
+        pointer-events: none;
+    }
+    .tv-bottom {
+        background-color: white;
+        bottom: -10px;
+        right: -5px;
+        height: 7.5%;
+        width: 100%;
+        transform: scale(.9);
+        z-index: 1999;
+    }
+    .tv-top {
+        background-color: white;
+        top: -10px;
+        right: -5px;
+        height: 10%;
+        width: 100%;
+        transform: scale(.9);
+        z-index: 1999;
+    }
+    .nav-item {
+        padding-left: 10px;
+    }
+    .col-md-4 {
+        margin-top: 15px;
+    }
+    .first-content {
+        margin-top: 200px;
+    }
+    .first-content-about {
+        margin-top: 300px;
+    }
+}
