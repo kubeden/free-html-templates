@@ -1,4 +1,4 @@
-![image](./readme-image.png)
+![image](./readme-image.png | width=100)
 
 ## ✨ Free HTML templates by [@asciiden](https://twitter.com/asciiden)
 
