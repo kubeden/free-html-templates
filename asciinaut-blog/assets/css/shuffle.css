@@ -1,0 +1,36 @@
+  
+  .filterDiv {  
+    display: none;
+  }
+
+  .shuffle-menu {
+    background-color: white;
+    border: 1px solid black;
+    border-radius:5px;
+  }
+  .my-btn:focus{
+      /* box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25); */
+      box-shadow: none;
+      background-color: #666;
+      color: white;
+  }
+  .my-btn{
+      margin: 5px;
+  }
+  .my-btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+  }
+  .show {
+    animation-name: showCard;
+    animation-duration: .3s;
+    display: block;
+  }
+
+  @keyframes showCard {
+    0% {display: block; transform: scale(0)}
+    100% {display: block; transform: scale(1)}
+  }
