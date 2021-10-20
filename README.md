@@ -10,5 +10,5 @@ Feel free to grab whatever you need from here!
 
 In case you feel the urge to contact me or simply want to follow me around ⬇️
 
-💬 Twitter - [TWITTER://asciiden](https://twitter.com/asciiden)
+💬 Twitter - [TWITTER://asciiden](https://twitter.com/asciiden) <br>
 📝 Personal website / blog - [BLOG://asciiden.com](https://asciiden.com)
