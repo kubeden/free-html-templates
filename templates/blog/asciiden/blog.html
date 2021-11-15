@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Color scheme meta tags -->
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- My meta tags -->
+    <meta name="author" content="Denislav Gavrilov">
+    <meta name="keywords" content="asciiden, asciiden.com, denislav blog, denislav gavrilov, devops blog">
+    <meta name="description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech! 🤖👨‍🚀"/>
+
+    <!--Twitter Meta-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@asciiden">
+    <meta name="twitter:image" content="./assets/img/banner_blue.png">
+    <meta name="twitter:title" content="Asciiden.com | Famous blogger.">
+    <meta name="twitter:image:alt" content="Asciiden card image">
+    <meta name="twitter:description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech! 🤖👨‍🚀">
+
+    <!--OG Meta-->
+    <meta property="og:type" content="blog.post">
+    <meta property="og:title" content="Asciiden.com | Famous blogger.">
+    <meta property="og:description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech!. Follow me on Twitter @asciiden for updates! 🤖👨‍🚀">
+    <meta property="og:url" content="https://asciiden.com/">
+    <meta property="og:image" content="./assets/img/banner_blue.png">
+
+    <title>Asciiden | Famous blogger.</title>
+
+    <script>
+      const currentTheme = localStorage.getItem("theme");
+
+      if (currentTheme) {
+          document.documentElement.setAttribute("data-theme", currentTheme);
+      }
+    </script>
+
+    <link rel="icon" href="assets/img/logo/asciiden-logo-finished.svg" alt="Logo Image" type="image/svg"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- base css -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+
+    <script src="https://kit.fontawesome.com/16b983e4de.js" crossorigin="anonymous"></script>
+</head>
+<body class="light" style="background-color: var(--body-color);">
+
+    <script>
+      const theme = localStorage.getItem('theme') || 'light';
+      document.body.className = theme;
+    </script>
+
+  <!-- BEFORE NAV -->
+
+  <!-- Search Window -->
+  <!-- The search is with Livewire and not ajax, so you should find a way to implement it yourself -->
+
+  <div class="searchOverlay" style="display: none; position: fixed; width: 100%; height: 100%; background-color: #3d375e7f; z-index: 99;"></div>
+  <div class="container searchContainer hideSearch darkModeBorder darkModeDiv" style="overflow-y: scroll; position: fixed; top: 0; right: 0; z-index: 100; height: 100%; max-width: 500px; border: 1px solid var(--border-color);">
+  <button onclick="hideSearch()" class="fa fa-times" style="background-color: white; border: none; position: absolute; top: 10px; right: 10px;"></button>
+
+  <div>
+    <div class="row justify-content-center darkModeDiv">
+      <h3 class="darkModeText" style="font-weight: 800; padding-top: 15px; padding-bottom: 15px;">SEARCH</h3>
+    </div>
+    <div class="row justify-content-center darkModeDiv">
+      <div class="searchBar w-100">
+        <form method="GET" class="form-inline pl-4 pr-4" style="flex-flow: nowrap;">
+          <input wire:model="search" id="search" class="form-control w-100 darkModeDiv darkModeInput" name="search" type="search" placeholder="Search" aria-label="Search" style="font-weight: 600; border: 1px solid var(--border-color)!important;" required/>
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-center pb-3 pt-3 darkModeDiv">
+      <div class="col text-center">
+          <small class="font-italic darkModeText">RESULTS</small>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+      <div class="col p-4">
+        <div class="row justify-content-center">
+          <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+        </div>
+        <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+        </div>
+        <div class="row justify-content-center">
+          <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+  <!-- Desktop Menu -->
+  <nav class="desktop-menu  m-auto rounded-lg darkModeBorder" style="height: 55px!important; border-bottom: 1px solid var(--border-color)!important; background-color: white!important;">
+  <div class="row w-100 p-2 m-0 darkModeDiv">
+    <div class="col text-left align-self-center">
+
+    <!-- theme color -->
+      <button id="theme-toggle" class="darkModeSocial fas fa-sun" style="font-size: 26px;"></button>
+    </div>
+
+    <div class="col text-center">
+      <a class="navbar-brand" href="./index.html">
+        <span class="navbar-brand mb-0 h1 ml-4 m-0" style="font-weight: 900;">
+          <span class="darkModeLogo">ASCII</span>
+        </span>
+        <span class="asciiden-logo">
+          <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showLight" style="display: none;" width="40" height="40" class="d-inline-block align-top" alt="">
+          <img src="./assets/img/logo/asciiden-logo-finished-dark.svg" class="showDark" style="display: none;" width="40" height="40" class="d-inline-block align-top" alt="">
+        </span>
+        <span class="navbar-brand mb-0 h1 ml-4" style="font-weight: 900; margin: 0px!important;">
+          <span class="darkModeText">DEN</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="col text-right align-self-center">
+          <button onclick="showSearch()" class="darkModeSocial fa fa-search" style="border: none; background-color: unset;"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row w-100 m-0 darkModeDiv darkModeBorder" style="border: 1px solid var(--border-color);">
+    <div class="row m-0 w-100 text-center">
+      <div class="col p-2">
+        <a class="nav-item nav-link darkModeNav" href="./index.html" style="font-weight: 800;">Home</a>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./about.html" style="font-weight: 800;">About Me</a>
+      </div>
+      <div class="col p-2 darkModeBorder blogDropDown" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./blog.html" style="font-weight: 800;">Blog</a>
+        <div class="row w-100 pb-5 m-0 darkModeDiv darkModeBorder blogDropDownContent" style="border: 1px solid var(--border-color); position: fixed; left: 0; top: 123px;">
+          <div class="row w-100 m-0 pt-4 pb-4 justify-content-center">
+          <h2 class="darkModeText" style="font-weight: 800;">🔥 HOT POSTS 🔥</h2>
+          </div>
+          <div class="row m-0 w-100 text-center">
+    
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div>
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div> -->
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div> -->
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div>
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div> -->
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div>
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          </div>
+
+          <div class="row w-100 m-0">
+          </div>
+        </div>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./projects.html" style="font-weight: 800;">Projects</a>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./contact.html" style="font-weight: 800;">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="myDIV mobile-menu topnav darkModeBorder" style="border: 1px solid var(--border-color);">
+  <div class="row" style="margin-right: 0px; margin-left: 0px;">
+  <div class="col-2 asciiden-logo">
+    <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showLight" style="display: none; margin-top: 6px; margin-left: 6px;" width="40" height="40" class="d-inline-block" alt="">
+    <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showDark" style="display: none; margin-top: 6px; margin-left: 6px;" width="40" height="40" class="d-inline-block" alt="">
+  </div>
+  <div class="col-8 text-center">
+  <a href="./index.html" class="text-dark" style="font-weight: 800;">
+    <span style="color: var(--primary)">ASCII</span>
+    <!-- <span style="color: var(--red)">S</span>
+    <span style="color: var(--secondary)">C</span>
+    <span style="color: var(--yellow)">I</span>
+    <span style="color: var(--cyan)">I</span> -->
+    <span class="darkModeText">DEN</span>
+    <!-- <span class="darkModeText">E</span>
+    <span class="darkModeText">N</span> -->
+  </a>
+  </div>
+
+  </div>
+    <div id="myLinks">
+    <a class="text-dark nav-item nav-link darkModeBorder" href="./index.html" style="border-bottom: 1px solid var(--border-color)!important; border-top: 1px solid var(--border-color)!important; font-weight: 800;">Home <span class="sr-only">(current)</span></a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./about.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">About Me</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./blog.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">Blog</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./projects.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">Projects</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./contact.html" style="font-weight: 800;">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon bg-light darkModeBorder" style="border-left: 1px solid var(--border-color);" onclick="myFunction()">
+        <i class="text-dark fa fa-code"></i>
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- MAIN CONTENT -->
+    <div class="site-wrapper m-auto darkModeBorder" style="margin-top: 150px!important; border: 1px solid var(--border-color);">
+  
+      <div class="row m-0 darkModeDiv">
+        <div class="col-md-8 m-auto text-center">
+          <div class="about-content jumbotron rounded-lg" style="background-color: unset;">
+            <span style="font-size: 60px;">📝</span>
+            <h1 class="display-4 font-weight-bold darkModeText">Blog</h1>
+            <p class="darkModeText">In here, you can find all of my posts, as well as projects. I am doing WebDev, GameDev and SysAdmin stuff. I hope you find something to be inspired from!</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row rounded-lg w-100 m-auto blog-menu" style="position: sticky; top: 123px; z-index: 5;">
+          <div class="shuffle-menu col m-auto text-center ps-0 pe-0 darkModeBorder darkModeDiv" style="border: 1px solid var(--border-color);">
+                <div class="row m-auto" id="myBtnContainer" style="padding-top: 5px; padding-bottom: 5px; justify-content: center;">
+                      <button class="btn darkModeActiveBtn darkModeA activeMenu mr-1 ml-1" onclick="filterSelection('all')" style="background-color: black; border: 5px solid black; color: white; font-weight: 700;"> All</button>
+                      <button class="btn darkModeActiveBtn mr-1 darkModeA" onclick="filterSelection('how-to')" style="background-color: black; border: 5px solid black; color: white; font-weight: 700;"> How-To</button>
+                      <button class="btn darkModeActiveBtn mr-1 darkModeA" onclick="filterSelection('thoughts')" style="background-color: black; border: 5px solid black; color: white; font-weight: 700;"> Thoughts</button>
+                      <button class="btn darkModeActiveBtn darkModeA" onclick="filterSelection('stuff')" style="background-color: black; border: 5px solid black; color: white; font-weight: 700;"> Stuff</button>
+                </div>
+          </div>
+      </div>
+  
+      <div class="index-row row m-0 pb-5 pt-5 text-center justify-content-center darkModeDiv">
+            <div class="col filterDiv how-to">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv thoughts">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv stuff">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv how-to">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv thoughts">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv stuff">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv how-to">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col filterDiv stuff">
+                <a href="./single-post.html" class="card darkModeA" style="padding: 0px!important;">
+                  <div class="row" style="">
+                    <div class="col m-auto">
+                      <img src="./assets/img/logo-asciiden.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img" alt="post-img" style="width:100%;">
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col" style="text-align: -webkit-center;">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-color: var(--a-bg);">CATEGORY NAME</p>
+                    </div>
+                  </div>
+                  <div class="row darkModeA" style="min-height: 175px; margin: 0; border-bottom: 2px solid white!important;">
+                    <div class="col m-auto">
+                      <h2 class="darkModeA" style="font-weight: 900; font-size: 18px; padding: 8%; margin: 0;">This is one great post title!</h2>
+                    </div>
+                  </div>
+                  <div class="row darkModeA pt-2 pb-2" style="margin: 0;">
+                    <div class="col" style="text-align: -webkit-center">
+                      <p class="text-center darkModeA" style="font-weight: 800; font-size: 16px; border-bottom: none; color: white;">15-11-2021 </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      </div>
+      </div>
+  </div>
+  
+  
+  <!-- END MAIN CONTENT -->
+
+
+
+
+
+
+  <a href="./about.html#communityEngagement">
+    <div class="row btn p-0 darkModeDiv" id="navigatorsBtn">
+      <div class="col" style="align-self: center;">
+        <span>
+        DigitalOcean Navigator
+        </span>
+      </div>
+      <div class="col-2 pt-1 pb-1" style="border-left: 3px solid #0069ff; padding-right: 55px;">
+          <svg id="DO_Navigator_logo" data-name="DO Navigator logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 180 180">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: url(#linear-gradient);
+                }
+
+                .cls-2 {
+                  fill: #0069ff;
+                }
+
+                .cls-3 {
+                  fill: #4de5ff;
+                }
+              </style>
+              <linearGradient id="linear-gradient" x1="199.77724" y1="-86.65724" x2="-4.98428" y2="242.01125" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4de5ff"/>
+                <stop offset="0.11884" stop-color="#3bc7ff"/>
+                <stop offset="0.28313" stop-color="#26a6ff"/>
+                <stop offset="0.45109" stop-color="#158bff"/>
+                <stop offset="0.62208" stop-color="#0978ff"/>
+                <stop offset="0.79784" stop-color="#026dff"/>
+                <stop offset="0.98566" stop-color="#0069ff"/>
+              </linearGradient>
+            </defs>
+            <g>
+              <path class="cls-1" d="M89.2552,180a89.2552,89.2552,0,1,1,89.2552-89.2552A89.35632,89.35632,0,0,1,89.2552,180Zm0-157.07023a67.815,67.815,0,1,0,67.815,67.815A67.89165,67.89165,0,0,0,89.2552,22.92977Z"/>
+              <path class="cls-2" d="M79.8019,82.95191q.3745-.4538.7907-.87A12.3151,12.3151,0,0,1,82.40568,80.586q.4888-.33022,1.01-.61361a12.24234,12.24234,0,0,1,11.67894,0q.52071.28284,1.01005.61361a12.31194,12.31194,0,0,1,1.81314,1.49593q.41571.41571.79065.87a12.2005,12.2005,0,0,1,2.79751,7.79262h33.21817L89.2552,46.64224l-45.469,44.10229H77.00439A12.2005,12.2005,0,0,1,79.8019,82.95191Z"/>
+              <path class="cls-3" d="M89.2552,102.9954A12.25082,12.25082,0,0,1,77.00439,90.74458H43.78621l45.469,44.10235,45.469-44.10235H101.506A12.25082,12.25082,0,0,1,89.2552,102.9954Z"/>
+            </g>
+          </svg>
+      </div>
+    </div>
+  </a>
+
+  <div class="row m-auto" style="margin-right: 0px; margin-left: 0px;">
+    <div class="row w-100" style="margin-right: 0px; margin-left: 0px;">
+      <h5 class="text-center pt-5 m-auto darkModeText">© 2020 | Denislav Gavrilov</h5>
+    </div>
+    <div class="row w-100" style="margin-right: 0px; margin-left: 0px;">
+      <div class="socials text-center pb-5 m-auto">
+        <a href="https://twitter.com/asciiden" target="_blank" class="fa fa-2x p-1 fa-twitter-square pt-4 darkModeSocial"></a>
+        <a href="https://www.facebook.com/denislav.gavrilov.946/" target="_blank" class="fa fa-2x p-1 fa-facebook-square darkModeSocial"></a>
+        <a href="https://www.instagram.com/asciiden/" target="_blank" class="fab fa-2x p-1 fa-instagram-square darkModeSocial"></a>
+        <a href="https://dev.to/asciiden" target="_blank" class="fab fa-2x p-1 fa-dev darkModeSocial"></a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    
+
+    <!-- SELF SCRIPTS -->
+
+    <!-- <script src="/assets/js/shuffle.js"></script> -->
+    <script src="./assets/js/base.js"></script>
+    <script src="./assets/js/theme-color.js"></script>
+    <script src="./assets/js/shuffle.js"></script>
+
+
+
+
+
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    </script>
+</body>
+</html>

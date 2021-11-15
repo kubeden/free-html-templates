@@ -1,0 +1,541 @@
+body, html {
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+pre {
+    border: 5px solid black;
+    border-radius: 5px;
+    overflow-x: scroll;
+}
+
+pre>code {
+    padding: 15px!important;
+    background-color: black!important;
+    color: white!important;
+}
+
+@media screen and (max-width: 820px) {
+    .desktop-menu, .marquee {
+        display: none;
+    }
+    .top-post-right {
+        display: none;
+    }
+    .newsletter-left {
+        display: none;
+    }
+    .my-blog-container {
+        margin-top: 100px!important;
+    }
+    .mobile-menu {
+        position: fixed!important;
+        background-color: white!important;
+        width: 100%;
+        z-index: 9999;
+        top: 0;
+    }
+    .index-row {
+        margin-top: 100px!important;
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+    .my-card {
+        width: 100%!important;
+        margin-left: 0px!important;
+    }
+    .about-content {
+        box-shadow: none!important;
+        background-color: white!important;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .top-post-right {
+        display: none;
+    }
+    .newsletter-left {
+        display: none;
+    }   
+}
+@media screen and (max-width: 1260px) {
+    .desktop-menu, .marquee {
+        display: none;
+    }
+    .mobile-menu {
+        display: block!important;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+    .w-md-50 {
+        width: 100%;   
+    }
+    .blog-menu {
+        top: 54px!important;
+    }
+}
+@media screen and (min-width: 600px) {
+    .mobile-menu {
+        display: none;
+    }
+    .desktop-menu {
+        position: sticky;
+        top: 0px;
+        z-index: 50;
+    }
+    .site-wrapper {
+        max-width: 1540px;
+    }
+    .top-post-right {
+        position: fixed;
+        top: 30%;
+        right: 15px;
+    }
+    .newsletter-left {
+        position: fixed;
+        top: 30%;
+        left: 0;
+    }
+    .my-blog-container {
+        margin-top: 100px!important;
+    }
+    .shuffle-menu {
+        top: 45px;
+    }
+    .w-md-50 {
+        width: 50%;
+    }
+}
+
+.my-img {
+    width: 100px;
+    border-radius: 0px!important;
+}
+
+.my-card {
+    animation: lift-in .5s ease forwards;
+    background-color: white;
+}
+.my-card:hover {
+    animation: lift-out .5s ease forwards;
+}
+
+.card:hover > .fire-post {
+  transform: rotate(-35deg)
+}
+
+.card > .fire-post {
+  transition-property: all;
+  transition: transform;
+  transition-duration: .5s;
+}
+
+@keyframes rotateTest {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(-35deg)}
+}
+
+.big-post {
+    animation: lift-in .5s ease forwards;
+    background-color: white;
+}
+.big-post:hover {
+    animation: lift-out .5s ease forwards;
+}
+.shuffle-menu {
+    position: sticky;
+    top: 30px;
+    background-color: white;
+}
+
+.form-control:focus, .btn:focus {
+    border-color: white;
+    box-shadow: 0 0 0 0.2rem rgb(76 76 76 / 25%);
+}
+
+@keyframes lift-in {
+    from { transform: translateY(-15px); transform: scale(1.05); z-index: 10; }
+    to { transform: translateY(0px); transform: scale(1); }
+}
+
+@keyframes lift-out {
+    from { transform: translateY(0px); transform: scale(1); }
+    to { transform: translateY(-15px); transform: scale(1.05); z-index: 10; }
+}
+
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    background-color: white;
+    z-index: 9999;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+  .filterDiv {  
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+
+
+
+
+  .how-to-p {
+      background-color: var(--primary);
+      color: white;
+      border: 10px solid black;
+  }
+  .thoughts-p {
+      background-color: var(--red);
+      color: white;
+      border: 10px solid black;
+  }
+  .stuff-p {
+      background-color: var(--pink);
+      color: white;
+      border: 10px solid black;
+  }
+  
+  .card {
+      border: 6px solid black!important;
+  }
+
+  .card {
+    background-color: var(--background);
+    display: block;
+    width: 300px;
+    min-height: 90px;
+    border: 5px solid var(--primary);
+    padding: 15px;
+    margin: 20px auto 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+    transition: box-shadow .5s, top .5s, left .5s;
+  }
+  
+.how-to>.card:hover {
+  top: -3px;
+  box-shadow: 0px 0px 0 4px var(--hover-color), 0px 0px 0px 8px var(--hover-color);
+  border-radius: 1px;
+}
+
+.stuff>.card:hover {
+  top: -3px;
+  box-shadow: 0px 0px 0 4px var(--hover-color), 0px 0px 0px 8px var(--hover-color);
+  border-radius: 1px;
+}
+
+.thoughts>.card:hover {
+  top: -3px;
+  box-shadow: 0px 0px 0 4px var(--hover-color), 0px 0px 0px 8px var(--hover-color);
+  border-radius: 1px;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  :root {
+    --primary: #007bff;
+    --secondary: #22D2A0;
+    --background: white;
+    --green: #1FC11B;
+    --yellow: #FFD913;
+    --orange: #FF9C55;
+    --red: #FF5555;
+  } 
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    /* background-image: radial-gradient(var(--secondary) 30%, var(--background) 30%);
+    background-size: 2px 3px; */
+  }
+  
+  .card p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+  }
+  
+  .card h2 {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .card-2 p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  
+  .card-2 h2 {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .showSearch {
+    display: block;
+    animation-name: showSearch;
+    animation-duration: .4s;
+  }
+
+  .hideSearch {
+      display: none!important;
+  }
+
+  @keyframes showSearch {
+      from {right: -800px; opacity: 0}
+      to {right: 0; opacity: 1}
+  }
+
+  body::-webkit-scrollbar {
+      width: 9px;
+  }
+  body::-webkit-scrollbar-thumb {
+      background: black;
+  }
+
+.btn.activeMenu {
+    background-color: white!important;
+    color: black!important;
+}
+.btn.activeMenu:focus {
+    box-shadow: unset!important;
+}
+
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#theme-toggle:focus, #theme-toggle:focus-visible, #theme-toggle {
+  background-color: #ffffff00!important;
+  border: 0px solid #ffffff00!important;
+}
+
+
+
+
+a:hover {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body.light {
+    --bg-color: white!important;
+    --body-color: #eef0f1!important;
+    --border-color: #c7c7c7;
+    --text-color: black;
+    --a-bg: black;
+    --a-border: black;
+    --a-text: white;
+    --soc-color: black;
+    --nav-text: black;
+    --hover-color: black;
+    --logo-text-color: var(--primary);
+}
+
+body.dark {
+  --bg-color: #15141b!important;
+  --body-color: #15141b!important;
+  --border-color: #3d375e;
+  --text-color: white;
+  --a-bg: #ff6767;
+  --a-border: #ff6767;
+  --a-text: #15141b;
+  --soc-color: #ff6767;
+  --nav-text: white;
+  --hover-color: #ff6767;
+  --logo-text-color: #ff6767;
+  --color-active-button: #61ffca;
+}
+
+.btn.activeMenu.darkModeActiveBtn {
+  border-color: var(--color-active-button) !important;
+  background-color: var(--color-active-button) !important;
+}
+.darkModeLogo {
+  color: var(--logo-text-color);
+}
+.darkModeSocial {
+  color: var(--soc-color);
+}
+.darkModeText {
+  color: var(--text-color);
+}
+.darkModeBorder {
+  border-color: var(--border-color);
+}
+.darkModeDiv {
+  background-color: var(--bg-color)!important;
+}
+.darkModeA {
+  background-color: var(--a-bg)!important;
+  border-color: var(--a-border)!important;
+  color: var(--a-text)!important;
+}
+.darkModeNav {
+  color: var(--nav-text);
+}
+.darkModeInput:focus {
+  background-color: var(--bg-color)!important;
+  color: var(--text-color);
+}
+
+
+
+
+.blogDropDownContent {
+  transition: 2s;
+  display: none;
+}
+
+.blogDropDown:hover .blogDropDownContent {
+  display: block!important;
+}
+
+
+
+.bg-GAME {
+  background-color: var(--danger);
+}
+.bg-WEBSITE {
+  background-color: var(--primary);
+}
+
+.category-How-To {
+  border: 7px solid var(--danger);
+}
+
+.category-Thoughts {
+  border: 7px solid var(--primary);
+}
+
+.category-Stuff {
+  border: 7px solid var(--warning);
+}
+
+#navigatorsBtn {
+  position: fixed;
+  bottom: 1%;
+  left: -250px;
+  background-color: white;
+  color: #0069ff;
+  font-weight: 700;
+  display: flex;
+  border: 3px solid #0069ff;
+  font-weight: 800;
+
+  transition: .7s;
+}
+#navigatorsBtn:hover {
+  left: 0;
+}
+
+
+
+.showLightLogo > img.showLight {
+  display: unset!important;
+}
+
+.showDarkLogo > img.showDark {
+  display: unset!important;
+}

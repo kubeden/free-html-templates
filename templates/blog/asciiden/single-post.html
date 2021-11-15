@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Color scheme meta tags -->
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- My meta tags -->
+    <meta name="author" content="Denislav Gavrilov">
+    <meta name="keywords" content="asciiden, asciiden.com, denislav blog, denislav gavrilov, devops blog">
+    <meta name="description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech! 🤖👨‍🚀"/>
+
+    <!--Twitter Meta-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@asciiden">
+    <meta name="twitter:image" content="./assets/img/banner_blue.png">
+    <meta name="twitter:title" content="Asciiden.com | Famous blogger.">
+    <meta name="twitter:image:alt" content="Asciiden card image">
+    <meta name="twitter:description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech! 🤖👨‍🚀">
+
+    <!--OG Meta-->
+    <meta property="og:type" content="blog.post">
+    <meta property="og:title" content="Asciiden.com | Famous blogger.">
+    <meta property="og:description" content="I am exploring the world of Infrastructure & Web Development. Tune in for tutorials on DevOps, Web Development and All-Things-Tech!. Follow me on Twitter @asciiden for updates! 🤖👨‍🚀">
+    <meta property="og:url" content="https://asciiden.com/">
+    <meta property="og:image" content="./assets/img/banner_blue.png">
+
+    <title>Asciiden | Famous blogger.</title>
+
+    <script>
+      const currentTheme = localStorage.getItem("theme");
+
+      if (currentTheme) {
+          document.documentElement.setAttribute("data-theme", currentTheme);
+      }
+    </script>
+
+    <link rel="icon" href="assets/img/logo/asciiden-logo-finished.svg" alt="Logo Image" type="image/svg"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- base css -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/hljs-own.css">
+    <link rel="stylesheet" href="./assets/css/singlePost.css">
+
+    <script src="https://kit.fontawesome.com/16b983e4de.js" crossorigin="anonymous"></script>
+</head>
+<body class="light" style="background-color: var(--body-color);">
+
+    <script>
+      const theme = localStorage.getItem('theme') || 'light';
+      document.body.className = theme;
+    </script>
+
+  <!-- BEFORE NAV -->
+
+  <!-- Search Window -->
+  <!-- The search is with Livewire and not ajax, so you should find a way to implement it yourself -->
+
+  <div class="searchOverlay" style="display: none; position: fixed; width: 100%; height: 100%; background-color: #3d375e7f; z-index: 99;"></div>
+  <div class="container searchContainer hideSearch darkModeBorder darkModeDiv" style="overflow-y: scroll; position: fixed; top: 0; right: 0; z-index: 100; height: 100%; max-width: 500px; border: 1px solid var(--border-color);">
+  <button onclick="hideSearch()" class="fa fa-times" style="background-color: white; border: none; position: absolute; top: 10px; right: 10px;"></button>
+
+  <div>
+    <div class="row justify-content-center darkModeDiv">
+      <h3 class="darkModeText" style="font-weight: 800; padding-top: 15px; padding-bottom: 15px;">SEARCH</h3>
+    </div>
+    <div class="row justify-content-center darkModeDiv">
+      <div class="searchBar w-100">
+        <form method="GET" class="form-inline pl-4 pr-4" style="flex-flow: nowrap;">
+          <input wire:model="search" id="search" class="form-control w-100 darkModeDiv darkModeInput" name="search" type="search" placeholder="Search" aria-label="Search" style="font-weight: 600; border: 1px solid var(--border-color)!important;" required/>
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-center pb-3 pt-3 darkModeDiv">
+      <div class="col text-center">
+          <small class="font-italic darkModeText">RESULTS</small>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+      <div class="col p-4">
+        <div class="row justify-content-center">
+          <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+        </div>
+        <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+        </div>
+        <div class="row justify-content-center">
+          <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center pt-5 pb-5 darkModeDiv" style="border-top: 1px solid var(--border-color);">
+        <div class="col p-4">
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">FREE TEMPLATE</a>
+          </div>
+          <div class="row justify-content-center">
+              <a class="darkModeText" href="./single-post.html" style="font-style: italic; text-align: center; font-weight: 700;">Now this is a good post title!</a>
+          </div>
+          <div class="row justify-content-center">
+            <a class="darkModeText" href="./single-post.html" style="font-weight: 700; font-style: italic;">23-04-1999</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+  <!-- Desktop Menu -->
+  <nav class="desktop-menu  m-auto rounded-lg darkModeBorder" style="height: 55px!important; border-bottom: 1px solid var(--border-color)!important; background-color: white!important;">
+  <div class="row w-100 p-2 m-0 darkModeDiv">
+    <div class="col text-left align-self-center">
+
+    <!-- theme color -->
+      <button id="theme-toggle" class="darkModeSocial fas fa-sun" style="font-size: 26px;"></button>
+    </div>
+
+    <div class="col text-center">
+      <a class="navbar-brand" href="./index.html">
+        <span class="navbar-brand mb-0 h1 ml-4 m-0" style="font-weight: 900;">
+          <span class="darkModeLogo">ASCII</span>
+        </span>
+        <span class="asciiden-logo" style="border: unset!important;">
+          <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showLight" style="display: none; border: unset!important;" width="40" height="40" class="d-inline-block align-top" alt="">
+          <img src="./assets/img/logo/asciiden-logo-finished-dark.svg" class="showDark" style="display: none; border: unset!important;" width="40" height="40" class="d-inline-block align-top" alt="">
+        </span>
+        <span class="navbar-brand mb-0 h1 ml-4" style="font-weight: 900; margin: 0px!important;">
+          <span class="darkModeText">DEN</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="col text-right align-self-center">
+          <button onclick="showSearch()" class="darkModeSocial fa fa-search" style="border: none; background-color: unset;"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row w-100 m-0 darkModeDiv darkModeBorder" style="border: 1px solid var(--border-color);">
+    <div class="row m-0 w-100 text-center">
+      <div class="col p-2">
+        <a class="nav-item nav-link darkModeNav" href="./index.html" style="font-weight: 800;">Home</a>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./about.html" style="font-weight: 800;">About Me</a>
+      </div>
+      <div class="col p-2 darkModeBorder blogDropDown" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./blog.html" style="font-weight: 800;">Blog</a>
+        <div class="row w-100 pb-5 m-0 darkModeDiv darkModeBorder blogDropDownContent" style="border: 1px solid var(--border-color); position: fixed; left: 0; top: 123px;">
+          <div class="row w-100 m-0 pt-4 pb-4 justify-content-center">
+          <h2 class="darkModeText" style="font-weight: 800;">🔥 HOT POSTS 🔥</h2>
+          </div>
+          <div class="row m-0 w-100 text-center">
+    
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div>
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div> -->
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div> -->
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div>
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          <div class="col pb-3">
+            <div class="how-to">
+                <a href="./single-post.html" class="card darkModeA" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: auto;">
+
+                    <!-- <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">🔝</div> -->
+                    <div class="fire-post" style="position: absolute; top: -35px; right: -25px; z-index: 10; font-size: 40px;">✨</div>
+
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center;">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                        </div>
+                    </div>
+                    <div class="row" style="min-height: 140px;">
+                        <div class="col m-auto">
+                            <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">This is a perfect post title!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="text-align: -webkit-center">
+                            <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">23-04-2021</p>
+                        </div>
+                    </div>
+                  </a>
+              </div>
+          </div>
+
+          </div>
+
+          <div class="row w-100 m-0">
+          </div>
+        </div>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./projects.html" style="font-weight: 800;">Projects</a>
+      </div>
+      <div class="col p-2 darkModeBorder" style="border-left: 1px solid var(--border-color);">
+        <a class="nav-item nav-link darkModeNav" href="./contact.html" style="font-weight: 800;">Contact</a>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="myDIV mobile-menu topnav darkModeBorder" style="border: 1px solid var(--border-color);">
+  <div class="row" style="margin-right: 0px; margin-left: 0px;">
+  <div class="col-2 asciiden-logo">
+    <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showLight" style="display: none; margin-top: 6px; margin-left: 6px;" width="40" height="40" class="d-inline-block" alt="">
+    <img src="./assets/img/logo/asciiden-logo-finished.svg" class="showDark" style="display: none; margin-top: 6px; margin-left: 6px;" width="40" height="40" class="d-inline-block" alt="">
+  </div>
+  <div class="col-8 text-center">
+  <a href="./index.html" class="text-dark" style="font-weight: 800;">
+    <span style="color: var(--primary)">ASCII</span>
+    <!-- <span style="color: var(--red)">S</span>
+    <span style="color: var(--secondary)">C</span>
+    <span style="color: var(--yellow)">I</span>
+    <span style="color: var(--cyan)">I</span> -->
+    <span class="darkModeText">DEN</span>
+    <!-- <span class="darkModeText">E</span>
+    <span class="darkModeText">N</span> -->
+  </a>
+  </div>
+
+  </div>
+    <div id="myLinks">
+    <a class="text-dark nav-item nav-link darkModeBorder" href="./index.html" style="border-bottom: 1px solid var(--border-color)!important; border-top: 1px solid var(--border-color)!important; font-weight: 800;">Home <span class="sr-only">(current)</span></a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./about.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">About Me</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./blog.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">Blog</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./projects.html" style="border-bottom: 1px solid var(--border-color)!important; font-weight: 800;">Projects</a>
+        <a class="text-dark nav-item nav-link darkModeBorder" href="./contact.html" style="font-weight: 800;">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon bg-light darkModeBorder" style="border-left: 1px solid var(--border-color);" onclick="myFunction()">
+        <i class="text-dark fa fa-code"></i>
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- MAIN CONTENT -->
+
+
+  @extends('layouts.single-post-app')
+  @section('content')
+  
+  <div class="row" style="padding-top: 7rem!important; margin-left: 0px!important; margin-right:0px!important;">
+      <div class="col pl-4">
+          <div class="container hideOnMobile contentTable side-bar-scroll darkModeDiv" style="width: 80%; position: sticky; top: 21%; border-radius: 5px; overflow-y: scroll; max-height: 400px; border: 1px solid var(--border-color); border-bottom: none;">
+              <div class="row">
+                  <div class="col darkModeA">
+                      <h3 class="text-center p-3 darkModeText" style="color: white; padding-left: 0px!important;font-weight: 900;">Table of contents</h3>
+                  </div>
+              </div>
+              <div class="row darkModeDiv">
+              <div id="list-example" class="list-group hideOnMobile" style="width: 100%;">
+  
+              <!-- items -->
+  
+              </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="col-md-6 darkModeDiv darkModeText" style="border: 1px solid var(--border-color); border-radius: 5px; padding: 0px!important;">
+          <div class="scrollspy-example my-blog-container container site-wrapper m-auto">
+              <div class="container">
+                  
+  
+                  
+
+
+                  <!-- post body -->
+
+                  <div class="row text-center">
+                    <div class="text-center mb-5">
+                    <img src="https://asciiden.com/storage/posts/September2021/B8XtttMfmvPu9xiT0bsY.png" class="tilt-card-img card-img-top rounded-lg m-auto my-img w-75 how-to-image" alt="Post-img">
+                    </div>
+                    <div class="text-center mb-5 w-100">
+                    <p style="font-size: 42px!important; font-weight: 900; line-height: 60px!important;">How to use Socket.IO: Not the chat!</p>
+                    </div>
+                    </div>
+                    <h2 id="list-item-0">Prerequisites:</h2>
+                    <h3>Must-haves</h3>
+                    <ul>
+                    <li>node.js</li>
+                    <li>npm</li>
+                    <li>express</li>
+                    <li>socket.io</li>
+                    <li>VS Code</li>
+                    </ul>
+                    <h2 id="list-item-1">Introduction</h2>
+                    <h3>Backstory</h3>
+                    <p>If you read my other <a href="https://devdojo.com/dennis/the-jsourney-learn-with-projects-not-videos">post</a> you already know what we are going to build. If not - let me explain. We are going to build a version of <a href="https://scotch.io/courses/getting-started-with-javascript-for-web-development/crazy-buttons">ChrisOnCode's 'Crazy Buttons' lesson</a>. We are going to create a button which when clicked, moves to a random location within the document. We are also going to make the movement real-time so other people see if there is somebody else clicking it.</p>
+                    <h2 id="list-item-2">What is socket.io</h2>
+                    <p>As stated by the developers themselves:</p>
+                    <blockquote>
+                    <p><em>Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers. It has two parts: a client-side library that runs in the browser, and a server-side library for Node.js</em></p>
+                    </blockquote>
+                    <p>So basically it's a library that allows us to create realtime applications. An example of such is the .io games and the Facebook chat. I suggest you take a look at their official <a href="https://socket.io/docs/">website</a>. Checking <a href="https://dzone.com/articles/everything-you-need-to-know-about-socketio">this</a> link could also help you understand how it works.</p>
+                    <p>Now you know what we are going to build as well as with what.</p>
+                    <h2 id="list-item-3">Setting up the environment</h2>
+                    <p>As I am using Windows, I will be using Windows terms but if you're using another OS I am sure you will manage. Okay, we will start by setting up the environment. Create a new folder and name it <strong>The internet button</strong>. Open VS Code in the folder and create the following structure:<img src="https://cdn.devdojo.com/images/september2020/Folder%20Structure.png" alt="Folder Structure.png"></p>
+                    <p>Now we need to build the fundamentals of our application. Open a terminal in the directory and type</p>
+                    <pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> init
+                    </code></pre>
+                    <p>Leave the values blank, or add your name and description - it's your choice. We also need to install <strong>nodemon</strong> so we don't have to restart our application each time we make a change. Do so with</p>
+                    <pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install -g nodemon
+                    </code></pre>
+                    <p>The last packages we need to install are <strong>express</strong> &amp; <strong>socket.io</strong></p>
+                    <pre><code class="hljs sql">npm <span class="hljs-keyword">install</span> <span class="hljs-comment">--save express socket.io</span>
+                    </code></pre>
+                    <p>After all the package installation, your package.json should look similar to this:
+                    <img src="https://cdn.devdojo.com/images/september2020/package.png" alt="package.png"></p>
+                    <p>Cool, we are ready and set. Let's get to work!</p>
+                    <h2 id="list-item-4">Building the app</h2>
+                    <h3>Adding our variables</h3>
+                    <p>We will start with creating a <strong>server.js</strong> file inside our <em>server folder</em>. Now let's setup all the variables we need. We will start loading our modules first. Add the following 4 variables:</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">const</span> path          = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+                    <span class="hljs-keyword">const</span> http          = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+                    <span class="hljs-keyword">const</span> express       = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+                    <span class="hljs-keyword">const</span> socketIO      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'socket.io'</span>);
+                    </code></pre>
+                    <p>Okay, now let's set-up the express server. We will first set our path to serve our HTML through the <strong>public</strong> folder we created:</p>
+                    <pre><code class="hljs cs"><span class="hljs-keyword">const</span> publicPath    = path.<span class="hljs-keyword">join</span>(__dirname, <span class="hljs-string">'/../public'</span>);
+                    </code></pre>
+                    <p>We also need to specify a port our app is going to run on. Let's go with 3000:</p>
+                    <pre><code class="hljs cpp"><span class="hljs-keyword">const</span> port          = process.env.PORT || <span class="hljs-number">3000</span>;
+                    </code></pre>
+                    <p>Now we call our express function with:</p>
+                    <pre><code class="hljs bash"><span class="hljs-built_in">let</span> app             = express();
+                    </code></pre>
+                    <p>We then specify the http method to let HTTP connection in:</p>
+                    <pre><code class="hljs bash"><span class="hljs-built_in">let</span> server          = http.createServer(app);
+                    </code></pre>
+                    <p>Lastly, we set up our socketIO connection:</p>
+                    <pre><code class="hljs bash"><span class="hljs-built_in">let</span> io              = socketIO(server);
+                    </code></pre>
+                    <p>Our <strong>server.js</strong> file should have the following lines of code:</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+                    <span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+                    <span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+                    <span class="hljs-keyword">const</span> socketIO = <span class="hljs-built_in">require</span>(<span class="hljs-string">'socket.io'</span>);
+                    
+                    <span class="hljs-keyword">const</span> publicPath = path.join(__dirname, <span class="hljs-string">'/../public'</span>);
+                    <span class="hljs-keyword">const</span> port = process.env.PORT || <span class="hljs-number">3000</span>;
+                    <span class="hljs-keyword">let</span> app = express();
+                    <span class="hljs-keyword">let</span> server = http.createServer(app);
+                    <span class="hljs-keyword">let</span> io = socketIO(server);
+                    </code></pre>
+                    <h3>Setup our functions</h3>
+                    <p>We need to set our express server to finally serve the content:</p>
+                    <pre><code class="hljs php">app.<span class="hljs-keyword">use</span>(express.<span class="hljs-keyword">static</span>(<span class="hljs-keyword">public</span> path));
+                    </code></pre>
+                    <p>And finally connecting to the port:</p>
+                    <pre><code class="hljs coffeescript">server.listen(port, <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span> {
+                        <span class="hljs-built_in">console</span>.log(`<span class="javascript">Server is up on port ${port}.</span>`)
+                    });
+                    </code></pre>
+                    <p>Cool, we are all set. Now go inside the <em>public</em> folder, create a simple <strong>index.html</strong> file and add something to it. I am going to create a blank HTML document and add an h3 tag containing "Welcome to the socket.io training!". Go to your browser and type <strong>localhost:3000</strong> to verify everything is working.</p>
+                    <p>Perfect. Let's advance!</p>
+                    <h2 id="list-item-5">Setting up the front-end</h2>
+                    <p>As this is a <em>socket.io</em> tutorial I'm not going to fall into details on how to set-up your HTML &amp; CSS. Instead, I'm going to give you a link to the project without the socket.io part and we will build that instead. <a href="https://github.com/ascii-naut/socket-io-tutorial-post">link</a></p>
+                    <p>If you clone the project, keep in mind you have to create the folder <em>server</em> and add your <strong>server.js</strong> file. You also need to add <strong>app.js</strong> inside the <em>public/js</em> folder.</p>
+                    <h3>Variables</h3>
+                    <p>Okay, we already know what socket.io is and how it works. It is now time to make it work with our buttons. Insite <strong>public/js</strong> we are going to create an <strong>app.js</strong> file. We add our socket at the top</p>
+                    <pre><code class="hljs bash"><span class="hljs-built_in">let</span> socket = io();
+                    </code></pre>
+                    <p>We get our starting section. It contains components, visible before we click the "Start" button and disappear when we start the game.</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">const</span> startingSection = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.starting-section'</span>);
+                    </code></pre>
+                    <p>And the 'Start' button...</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">const</span> homeBtn = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.home-btn'</span>);
+                    </code></pre>
+                    <p>Finally, our 'crazy' button. The one that moves:</p>
+                    <pre><code class="hljs javascript"><span class="hljs-keyword">let</span> crazyButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'crazyButton'</span>);
+                    </code></pre>
+                    <h3>Socket.io server connection</h3>
+                    <p>Go to the <strong>server/server.js</strong> file and open a socket.io connection with the following code:</p>
+                    <pre><code class="hljs coffeescript">io.<span class="hljs-literal">on</span>(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-params">(socket)</span> =&gt;</span> {
+                        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A user just connected.'</span>);
+                        socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'disconnect'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'A user has disconnected.'</span>);
+                        })
+                    });
+                    </code></pre>
+                    <p>This is a built-in function. Whenever a new connection is made, the code within it will be executed. We include another built-in function <strong>disconnect</strong> which is self-explanatory.</p>
+                    <p>We can test this by starting nodemon (<strong>nodemon server/server.js</strong>) and browsing to localhost:3000. Open the terminal in VS Code and check if a message is being logged.</p>
+                    <h3>Start Game real-time</h3>
+                    <p>Let's create the functionality for the "Start" button. We are going to hide the <strong>.starting-section</strong> components and also make it real-time so they hide for other players as well. Navigate to <strong>app.js</strong> and add a click event listener to the <em>start button</em>:</p>
+                    <pre><code class="hljs coffeescript">start button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        
+                    })
+                    </code></pre>
+                    <p>Inside our event listener, we must emit a message to the socket.io server with <strong>socket.emit('startGame');</strong>:</p>
+                    <pre><code class="hljs coffeescript">startButton.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        socket.emit(<span class="hljs-string">'startGame'</span>);
+                    });
+                    </code></pre>
+                    <p>Now on the server side(<strong>server.js</strong>), we must create a 'listener' for that message:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'startGame'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    
+                    })
+                    </code></pre>
+                    <p>We emit a message back to all the connected clients:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'startGame'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        io.emit(<span class="hljs-string">'startGame'</span>);
+                    })
+                    </code></pre>
+                    <p>We then process the 'message' from the server in our <strong>app.js</strong>:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'startGame'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    });
+                    </code></pre>
+                    <p>and we call the function <em>hideStartButton()</em>:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'startGame'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        hideStartButton();
+                    });
+                    </code></pre>
+                    <p>Finally, we declare our <em>hideStartButton</em> function:</p>
+                    <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hideStartButton</span>(<span class="hljs-params"></span>) </span>{
+                        startButton.style.display = <span class="hljs-string">"none"</span>;
+                        crazyButton.style.display = <span class="hljs-string">"block"</span>;
+                        startingSection.style.display = <span class="hljs-string">"none"</span>;
+                    }
+                    </code></pre>
+                    <p>Now we test if everything is working in localhost:3000:
+                    <img src="https://cdn.devdojo.com/images/september2020/9b72a53939f52dd58052583a273a1851.gif" alt="9b72a53939f52dd58052583a273a1851.gif"></p>
+                    <h3>Move the button real-time</h3>
+                    <p>For this part everything is almost the same with only one difference - we must pass data from our app to the server, process it, and return it to each connected client.</p>
+                    <p>We add a event listener to our crazy button &amp; emit a message containing an object with two values - offsetLeft &amp; offsetTop, which are a Math.random multiplied by the innerWidth &amp; innerHeight of our window - the button's clientWidth &amp; clientHeight:</p>
+                    <pre><code class="hljs coffeescript">crazyButton.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        socket.emit(<span class="hljs-string">'crazyIsClicked'</span>, {
+                            offsetLeft: Math.random() * ((<span class="hljs-built_in">window</span>.innerWidth - crazyButton.clientWidth) - <span class="hljs-number">100</span>),
+                            offsetTop: Math.random() * ((<span class="hljs-built_in">window</span>.innerHeight - crazyButton.clientHeight) - <span class="hljs-number">50</span>)
+                        });
+                    })
+                    </code></pre>
+                    <p>The server then receives these values under the form of 'data' variable &amp; emits them back:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'crazyIsClicked'</span>, <span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span> {
+                        io.emit(<span class="hljs-string">'crazyIsClicked'</span>, data);
+                    });
+                    </code></pre>
+                    <p>Our app.js file then receives the data and input it in the function, which moves the button:</p>
+                    <pre><code class="hljs coffeescript">socket.<span class="hljs-literal">on</span>(<span class="hljs-string">'crazyIsClicked'</span>, <span class="hljs-function"><span class="hljs-params">(data)</span> =&gt;</span> {
+                        goCrazy(data.offsetLeft, data.offsetTop);
+                    });
+                    </code></pre>
+                    <p>We create our goCrazy function:</p>
+                    <pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goCrazy</span>(<span class="hljs-params">offLeft, offTop</span>) </span>{
+                        <span class="hljs-keyword">let</span> top, left;
+                    
+                        left = offLeft;
+                        top = offTop;
+                    
+                        crazyButton.style.top = top + <span class="hljs-string">'px'</span>;
+                        crazyButton.style.left = left + <span class="hljs-string">'px'</span>;
+                        crazyButton.style.animation = <span class="hljs-string">"none"</span>;
+                    }
+                    </code></pre>
+                    <p>And we test:
+                    <img src="https://cdn.devdojo.com/images/september2020/fde568eb7135dda0b81455054cc4eb37.gif" alt="fde568eb7135dda0b81455054cc4eb37.gif"></p>
+                    <p>Cool, we are all done!</p>
+                    <h2 id="list-item-6">Conclusion</h2>
+                    <p>Today you learned what socket.io is, how to pass data, and how to emit &amp; listen for messages. I hope this was helpful and you learned something today!</p>
+                    <p>Make sure to check out my other post related to this - (The JSourney: Learn with projects, not videos!)[https://devdojo.com/dennis/the-jsourney-learn-with-projects-not-videos]. I explain why building projects is a better way to study, instead of watching videos all day.</p>
+                  
+                  <!-- end post body -->
+
+
+
+
+  
+                  <div class="row pb-5 pt-5">
+                          <div class="col text-right previousPostCol">
+                              <a class="btn post-p darkModeText" href="./single-post.html" style="font-weight: 800; text-decoration: none!important;">⬅ Previous Post</a>
+                              <div class="{{ $previousPost->category_name }}">
+                                  <a href="./single-post.html" class="card previousPost" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: 0px; margin-right: auto; margin-top: 20px; border-width: 11px!important;">
+                                      <div class="row darkModeA" style="margin: -5px;">
+                                          <div class="col" style="text-align: -webkit-center;">
+                                              <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">STUFF</p>
+                                          </div>
+                                      </div>
+                                      <div class="row" style="min-height: 140px; margin: 0;">
+                                          <div class="col m-auto">
+                                              <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">Previous Post Title</h2>
+                                          </div>
+                                      </div>
+                                      <div class="row darkModeA" style="margin: -5px;">
+                                          <div class="col" style="text-align: -webkit-center">
+                                              <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">21-02-2021</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="col text-left nextPostCol">
+                              <a class="btn post-p" href="./single-post.html" style="font-weight: 800;">Next Post ➡</a>
+                              <div class="{{ $nextPost->category_name }}">
+                                  <a href="./single-post.html" class="card nextPost" style="color: var(--text-color); background-color: var(--bg-color); padding: 0px!important; margin: 0px; margin-right: auto; margin-top: 20px; border-width: 11px!important;">
+                                      <div class="row darkModeA" style="margin: -5px;">
+                                          <div class="col" style="text-align: -webkit-center;">
+                                              <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-right: none;">HOW-TO</p>
+                                          </div>
+                                      </div>
+                                      <div class="row" style="min-height: 140px; margin: 0;">
+                                          <div class="col m-auto">
+                                              <h3 style="font-weight: 900; font-size: 18px; padding: 8%; border-left: none!important;">A good post title!</h2>
+                                          </div>
+                                      </div>
+                                      <div class="row darkModeA" style="margin: -5px;">
+                                          <div class="col" style="text-align: -webkit-center">
+                                              <p class="text-center post-p" style="font-weight: 800; font-size: 16px; border-bottom: none;">21-02-2021 </p>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- style="border-bottom: 1px solid var(--border-color);" -->
+      <div class="col pl-4">
+          <div class="row side-bar-scroll" style="position: sticky; top: 21%; overflow-y: scroll; overflow-x: hidden; height: 75vh;">
+              <div class="row">
+                  <div class="container hideOnMobile contentTable darkModeDiv darkModeText" style="width: 80%; border: 1px solid var(--border-color); border-radius: 5px;">
+                      <div class="row darkModeA">
+                          <h3 class="p-3 m-auto darkModeText" style="font-weight: 900; color:white;">ABOUT ME</h3>
+                      </div>
+                      <div class="row">
+                          <p class="p-3 m-auto" style="padding-bottom: 0px!important;">I am exploring the world of Infrastructure & Web Development. If you want to get in touch with me, feel free to do so on my socials.</p>
+                          <div class="socials text-center pb-3 m-auto">
+                              <a href="https://twitter.com/asciiden" class="fa fa-2x p-1 fa-twitter-square pt-4 darkModeSocial"></a>
+                              <a href="https://dev.to/asciiden" class="fab fa-2x p-1 fa-dev darkModeSocial"></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row pt-2">
+                  <div class="container hideOnMobile contentTable darkModeDiv darkModeText" style="width: 80%; border: 1px solid var(--border-color); border-radius: 5px;">
+                      <div class="row darkModeA">
+                          <h3 class="p-3 m-auto darkModeText" style="color: white; font-weight: 900;">SUGGEST A TOPIC</h3>
+                      </div>
+                      <div class="row">
+                          <p class="p-3 m-auto">Are you interested how I am going to explore a topic you request? Or are you in need of a different perspective regarding certain technology? Hit me up! I would love to extend the variety of my posts!</p>
+                      </div>
+                      <div class="row mb-3">
+                          <a class="btn suggestBtn m-auto pt-2 pb-2 darkModeA" style="background-color: black; border-color: black; font-weight: 700; width: 80%; color: white; border: 5px solid black;" href="./contact#requestTopic">REQUEST</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  <!-- END MAIN CONTENT -->
+
+
+
+
+
+
+  <a href="./about.html#communityEngagement">
+    <div class="row btn p-0 darkModeDiv" id="navigatorsBtn">
+      <div class="col" style="align-self: center;">
+        <span>
+        DigitalOcean Navigator
+        </span>
+      </div>
+      <div class="col-2 pt-1 pb-1" style="border-left: 3px solid #0069ff; padding-right: 55px;">
+          <svg id="DO_Navigator_logo" data-name="DO Navigator logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 180 180">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: url(#linear-gradient);
+                }
+
+                .cls-2 {
+                  fill: #0069ff;
+                }
+
+                .cls-3 {
+                  fill: #4de5ff;
+                }
+              </style>
+              <linearGradient id="linear-gradient" x1="199.77724" y1="-86.65724" x2="-4.98428" y2="242.01125" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4de5ff"/>
+                <stop offset="0.11884" stop-color="#3bc7ff"/>
+                <stop offset="0.28313" stop-color="#26a6ff"/>
+                <stop offset="0.45109" stop-color="#158bff"/>
+                <stop offset="0.62208" stop-color="#0978ff"/>
+                <stop offset="0.79784" stop-color="#026dff"/>
+                <stop offset="0.98566" stop-color="#0069ff"/>
+              </linearGradient>
+            </defs>
+            <g>
+              <path class="cls-1" d="M89.2552,180a89.2552,89.2552,0,1,1,89.2552-89.2552A89.35632,89.35632,0,0,1,89.2552,180Zm0-157.07023a67.815,67.815,0,1,0,67.815,67.815A67.89165,67.89165,0,0,0,89.2552,22.92977Z"/>
+              <path class="cls-2" d="M79.8019,82.95191q.3745-.4538.7907-.87A12.3151,12.3151,0,0,1,82.40568,80.586q.4888-.33022,1.01-.61361a12.24234,12.24234,0,0,1,11.67894,0q.52071.28284,1.01005.61361a12.31194,12.31194,0,0,1,1.81314,1.49593q.41571.41571.79065.87a12.2005,12.2005,0,0,1,2.79751,7.79262h33.21817L89.2552,46.64224l-45.469,44.10229H77.00439A12.2005,12.2005,0,0,1,79.8019,82.95191Z"/>
+              <path class="cls-3" d="M89.2552,102.9954A12.25082,12.25082,0,0,1,77.00439,90.74458H43.78621l45.469,44.10235,45.469-44.10235H101.506A12.25082,12.25082,0,0,1,89.2552,102.9954Z"/>
+            </g>
+          </svg>
+      </div>
+    </div>
+  </a>
+
+  <div class="row m-auto" style="margin-right: 0px; margin-left: 0px;">
+    <div class="row w-100" style="margin-right: 0px; margin-left: 0px;">
+      <h5 class="text-center pt-5 m-auto darkModeText">© 2020 | Denislav Gavrilov</h5>
+    </div>
+    <div class="row w-100" style="margin-right: 0px; margin-left: 0px;">
+      <div class="socials text-center pb-5 m-auto">
+        <a href="https://twitter.com/asciiden" target="_blank" class="fa fa-2x p-1 fa-twitter-square pt-4 darkModeSocial"></a>
+        <a href="https://www.facebook.com/denislav.gavrilov.946/" target="_blank" class="fa fa-2x p-1 fa-facebook-square darkModeSocial"></a>
+        <a href="https://www.instagram.com/asciiden/" target="_blank" class="fab fa-2x p-1 fa-instagram-square darkModeSocial"></a>
+        <a href="https://dev.to/asciiden" target="_blank" class="fab fa-2x p-1 fa-dev darkModeSocial"></a>
+      </div>
+    </div>
+  </div>
+  
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    
+
+    <!-- SELF SCRIPTS -->
+
+    <!-- <script src="/assets/js/shuffle.js"></script> -->
+    <script src="./assets/js/base.js"></script>
+    <script src="./assets/js/theme-color.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+    function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    </script>
+    <script>
+        let a = document.querySelectorAll("h2");
+        let b = document.getElementById("list-example");
+        let e = document.querySelector(".contentTable");
+
+        let d = [];
+
+        for (let i = 0; i < a.length; i++) {
+          a[i].id = ('list-item-' + i);
+
+          let c = document.createElement("a");
+          c.classList.add('list-group-item');
+          c.classList.add('list-group-item-action');
+          c.classList.add('darkModeBorder')
+          c.innerHTML = a[i].innerHTML;
+          c.href = "#" + a[i].id;
+
+          d[i] = c;
+
+          b.appendChild(d[i]);
+        }
+
+        if(a.length <= 1) {
+          e.style.display = "none";
+        }
+    </script>
+
+    <script>
+      jQuery( document ).ready(function() { scrolled(); });
+      jQuery( document ).scroll(function() { scrolled(); });
+
+      function scrolled() {
+        var h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+        var p = parseInt((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+
+        jQuery('#progressbar').css("width", p + "%");
+        jQuery('#progressbar').attr("aria-valuenow", p);
+      }
+    </script>
+</body>
+</html>
