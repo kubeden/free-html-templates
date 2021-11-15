@@ -1,12 +1,12 @@
 ![image](../../../readme-image.png)
 
-## ✨ Free HTML templates by [@asciiden](https://twitter.com/asciiden)
+## ✨ ASCIINAUT HTML template by [@asciiden](https://twitter.com/asciiden)
 
-Hey folks! 👋
+Hey there! 👋
 
-I'm planning to use this repository as a container storing all my dead web frontend. I build a lot of stuff and unfortunately most of it goes to waste - either the recycle bin or a private repository in my GitHub profile.
+This is the template for my first ever blog. I tried to do it fancy but it was not really readable. That is why I focused on something more clear as the [../asciiden](../asciiden) directory.
 
-Feel free to grab whatever you need from here!
+Feel free to use it wherever you want. I'd appreciate a mention somewhere once you are done customizing. You are not obligated though.
 
 ## 👨‍💻 Contacts & Social
 
