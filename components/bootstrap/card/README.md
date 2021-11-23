@@ -1,4 +1,5 @@
-![image](../../../readme-image.png)
+<!-- ![image](../../../readme-image.png) -->
+![image](./card-img.png)
 
 ## ✨ ASCIIDEN HTML template by [@asciiden](https://twitter.com/asciiden)
 
