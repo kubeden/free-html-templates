@@ -1,5 +1,5 @@
 <!-- ![image](../../../readme-image.png) -->
-![image](./card-img.png)
+![image](./card-img-02.png)
 
 ## ✨ ASCIIDEN HTML template by [@asciiden](https://twitter.com/asciiden)
 
