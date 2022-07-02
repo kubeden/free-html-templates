@@ -1,0 +1,28 @@
+.projectsrow>.col>a {
+    line-height: 30px;
+}
+
+.projectsrow>h2 {
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.blogposts>a {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.dots {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+}
+
+#writing {
+    
+}

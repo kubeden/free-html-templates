@@ -1,0 +1,152 @@
+p img {
+    width: 100%;
+}
+
+@media screen and (min-width: 800px){
+}
+
+h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 3px;
+}
+
+p {
+    color: rgb(96, 96, 96);
+}
+
+ul>li {
+    color: #4628ff;
+}
+
+h3 {
+    font-size: 22px!important;
+}
+
+p {
+    margin-bottom: .5rem!important;
+}
+
+p>a, li>a {
+    color: var(--a-border);
+}
+p>a:link, li>a:link, h4>a:link {
+    color: #4628ff!important;   
+}
+
+.list-group-item-action.active {
+    background-color: #4628ff!important;
+}
+
+body {
+    position: relative;
+    background-color: #eef0f1;
+}
+@media screen and (min-width: 1700px) {
+
+}
+@media screen and (max-width: 1750px) {
+    .previousPostCol, .nextPostCol {
+    text-align: center!important;
+    margin-top: 10px!important;
+    }
+    .previousPost, .nextPost {
+    margin: auto!important;
+    margin-top: 10px!important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .hideOnMobile {
+        display: none!important;
+    }
+    .toast {
+        display: none!important;
+    }
+}
+:root {
+    --secondary: #22D2A0;
+}
+.list-group-item {
+    text-align: center;
+    padding: 5px 10px!important;
+}
+.list-group-item.active, .list-group-item:hover {
+    color: white;
+    border-radius: 0px;
+}
+
+.desktop-menu {
+    width: 100%!important;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+}
+
+img {
+    border-radius: 10px;
+    border: 1px solid rgb(200, 200, 200);
+
+}
+
+blockquote {
+    margin: 0 0 0 20px;
+    padding-left: 10px;
+    border-left: 4px solid #c7c7c7;
+    background-color: #e9e9e9;
+}
+blockquote>p {
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.post-p, .post-p:hover {
+    color: white;
+}
+
+h2 {
+    padding-top: 25px;
+    margin-top: -25px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: rgb(49, 49, 49);
+}
+
+/* width */
+#list-example::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+#list-example::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(230, 230, 230); 
+    border-radius: 10px;
+}
+
+/* Handle */
+#list-example::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+#list-example::-webkit-scrollbar-thumb:hover {
+    background: #5748ff; 
+}
+
+pre {
+    border: 1px solid #001858;
+    border-radius: 5px;
+}
+
+pre>code {
+    background: #d1d1e9!important;
+}

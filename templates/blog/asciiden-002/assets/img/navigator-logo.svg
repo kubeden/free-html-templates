@@ -1,0 +1,31 @@
+<svg id="DO_Navigator_logo" data-name="DO Navigator logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180" viewBox="0 0 180 180">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #0069ff;
+      }
+
+      .cls-3 {
+        fill: #4de5ff;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="199.77724" y1="-86.65724" x2="-4.98428" y2="242.01125" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4de5ff"/>
+      <stop offset="0.11884" stop-color="#3bc7ff"/>
+      <stop offset="0.28313" stop-color="#26a6ff"/>
+      <stop offset="0.45109" stop-color="#158bff"/>
+      <stop offset="0.62208" stop-color="#0978ff"/>
+      <stop offset="0.79784" stop-color="#026dff"/>
+      <stop offset="0.98566" stop-color="#0069ff"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path class="cls-1" d="M89.2552,180a89.2552,89.2552,0,1,1,89.2552-89.2552A89.35632,89.35632,0,0,1,89.2552,180Zm0-157.07023a67.815,67.815,0,1,0,67.815,67.815A67.89165,67.89165,0,0,0,89.2552,22.92977Z"/>
+    <path class="cls-2" d="M79.8019,82.95191q.3745-.4538.7907-.87A12.3151,12.3151,0,0,1,82.40568,80.586q.4888-.33022,1.01-.61361a12.24234,12.24234,0,0,1,11.67894,0q.52071.28284,1.01005.61361a12.31194,12.31194,0,0,1,1.81314,1.49593q.41571.41571.79065.87a12.2005,12.2005,0,0,1,2.79751,7.79262h33.21817L89.2552,46.64224l-45.469,44.10229H77.00439A12.2005,12.2005,0,0,1,79.8019,82.95191Z"/>
+    <path class="cls-3" d="M89.2552,102.9954A12.25082,12.25082,0,0,1,77.00439,90.74458H43.78621l45.469,44.10235,45.469-44.10235H101.506A12.25082,12.25082,0,0,1,89.2552,102.9954Z"/>
+  </g>
+</svg>
