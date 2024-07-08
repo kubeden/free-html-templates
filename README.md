@@ -1,6 +1,6 @@
 ![image](./readme-image.png)
 
-## ✨ Free HTML templates by [@asciiden](https://twitter.com/asciiden)
+## ✨ Free HTML templates
 
 Hey folks! 👋
 
